@@ -1,0 +1,1 @@
+let sectionslink = 'https://mock-api.driven.com.br/api/v4/cineflex/movies/ID_DO_FILME/showtimes';
