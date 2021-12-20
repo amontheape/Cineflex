@@ -24,3 +24,10 @@ h2 {
   line-height: 23px;
   margin-bottom: 22px;
 }
+
+p {
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #293845;
+}

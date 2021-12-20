@@ -19,8 +19,8 @@ const Banner = styled.header`
   right: 0;
   left: 0;
 `
-const HeadText = styled.div`
-  font-weight: normal;
+const Title = styled.div`
+  font-weight: ${({green}) => green ? 'bold' : 'nomal'};
   font-size: 24px;
   line-height: 28px;
   display: flex;
@@ -28,7 +28,7 @@ const HeadText = styled.div`
   justify-content: center;
   text-align: center;
 
-  color: #293845;
+  color: ${({ green }) => green ? '#247A6B' : '#293845'};
 
   height: 110px;
 `
@@ -66,4 +66,4 @@ const MovieInfo = styled.div`
   justify-content: center;
 `
 
-export {Banner, HeadText, Tail, MovieInfo};
+export {Banner, Title, Tail, MovieInfo};

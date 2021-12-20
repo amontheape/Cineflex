@@ -35,7 +35,17 @@ const Button = styled.button`
 
   padding: 12px 27px;
 
-  background-color: #e8833a;
+  background-color: ${ ({ allowClick }) => {
+    if(!allowClick){
+      return '#e8833a';
+    } else return allowClick === 'yes' ? '#e8833a' : '#DFE6ED';
+  }};
+   
+  pointer-events: ${({ allowClick }) => {
+    if(!allowClick){
+      return 'auto';
+    } else return allowClick === 'yes' ? 'auto' : 'none';
+  }};
 `
 const ButtonWrapper = styled.div`
   display: flex;
@@ -64,7 +74,7 @@ const Seat = styled.button`
   };
   border-radius: 12px;
 
-  pointer-events: ${({ status }) => status ? 'auto' : 'none'};
+  pointer-events: ${({ status }) => (status ? 'auto' : 'none')};
   
   display: flex;
   align-items: center;
@@ -134,6 +144,21 @@ const Form = styled.form`
     margin: 58px auto 0;
   }
 `
+const Bold = styled.p`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #293845;
+
+  margin-top: 40px;
+  margin-bottom: 10px;
+`
+const Info = styled.div`
+  & :last-child {
+    margin: 58px auto 0;
+  }
+`
 
 export {
   MoviesWrapper,
@@ -146,5 +171,7 @@ export {
   SummaryItem, 
   Label, 
   Input, 
-  Form
+  Form,
+  Bold,
+  Info 
 };

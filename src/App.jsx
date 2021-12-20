@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Header, Title } from './components'
-import { CheckOut, MovieList, Seats, Sessions } from './pages'
+import { Header } from './components';
+import { Title } from './components/style';
+import { CheckOut, MovieList, Seats, Sessions } from './pages';
 
 function App() {
   return (
@@ -12,26 +13,31 @@ function App() {
 
         <Route path='/' element={
           <>
-            <Title text='Selecione o filme' />
+            <Title>Selecione o filme</Title>
             <MovieList />
           </>
         } />
 
         <Route path='/sessoes/:movieId' element={
           <>
-            <Title text='Selecione o horário'/>
+            <Title>Selecione o horário</Title>
             <Sessions />
           </>
          } />
 
         <Route path='/assentos/:sessionId' element={
           <>
-            <Title text='Selecione o(s) assento(s)'/>
+            <Title>Selecione o(s) assento(s)</Title>
             <Seats />
           </>
          } />
 
-        <Route path='/sucesso' element={ <CheckOut />} />
+        <Route path='/sucesso' element={ 
+          <>
+            <Title green ><>Pedido feito<br/>com sucesso!</></Title>
+            <CheckOut />
+          </>
+        } />
 
       </Routes>
 

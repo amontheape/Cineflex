@@ -20,16 +20,16 @@ function Sessions() {
   return (
     <>
       {
-        session.days.map( session => {
+        session.days.map( (session , index) => {
           return (
             <>
-              <h2 key={session.id}>{`${session.weekday} - ${session.date}`}</h2>
-              <ButtonWrapper>
+              <h2 key={session.id * Math.random()}>{`${session.weekday} - ${session.date}`}</h2>
+              <ButtonWrapper key={index}>
               {
                 session.showtimes.map( times => {
                   return (
-                    <Link to={`/assentos/${times.id}`}>
-                      <Button key={times.id * 100}>{times.name}</Button>
+                    <Link to={`/assentos/${times.id}`} key={times.id * 99}>
+                      <Button key={times.id * 13}>{times.name}</Button>
                     </Link>
                   )
                 })
