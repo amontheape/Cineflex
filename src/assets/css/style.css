@@ -2,8 +2,25 @@ body {
   font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: center;
+  background-color: #e5e5e5;
 }
 
 #root {
-  width: 375px;
+  width: 385px;
+  height: 100vh;
+  overflow-y: auto;
+
+  background-color: #fff;
+  padding: 67px 24px 30px;
+
+  margin-bottom: 118px;
+
+  position: relative;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  margin-bottom: 22px;
 }

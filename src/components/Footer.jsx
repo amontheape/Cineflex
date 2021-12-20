@@ -1,23 +1,16 @@
-import styled from 'styled-components';
+import { MovieCard } from '../pages/style';
+import { Tail, MovieInfo } from './style'
 
-const Tail = styled.footer`
-  font-weight: normal;
-  font-size: 26px;
-  line-height: 30px;
-  display: flex;
-  align-items: center;
-
-  height: 118px;
-`
-
-function Footer(){
+function Footer({title, poster, imgSize, sessionInfo}){
   return(
     <Tail>
-      <img />
-      <div className="movie-info">
-        <p></p>
-        {1 > 2 && <p></p>}
-      </div>
+      <MovieCard imgSize={imgSize}>
+        <img src={poster} alt={title} />
+      </MovieCard>
+      <MovieInfo>
+        <p>{title}</p>
+        {sessionInfo && <p>{sessionInfo}</p>}
+      </MovieInfo>
     </Tail>
   );
 }

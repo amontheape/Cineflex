@@ -1,12 +1,6 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Title from './components/Title';
-import Footer from './components/Footer';
-import MovieList from './pages/MovieList';
-import Sections from './pages/Sections';
-import Seats from './pages/Seats';
-import CheckOut from './pages/CheckOut';
+import { Header, Title } from './components'
+import { CheckOut, MovieList, Seats, Sessions } from './pages'
 
 function App() {
   return (
@@ -16,28 +10,31 @@ function App() {
 
       <Routes>
 
-        <Route path='/' element={ <MovieList />} />
+        <Route path='/' element={
+          <>
+            <Title text='Selecione o filme' />
+            <MovieList />
+          </>
+        } />
 
-        <Route path='/filme/:movieId' element={
+        <Route path='/sessoes/:movieId' element={
           <>
             <Title text='Selecione o horário'/>
-            <Sections />
-            <Footer />
+            <Sessions />
           </>
          } />
 
-        <Route path='/sessao/:sectionId' element={
+        <Route path='/assentos/:sessionId' element={
           <>
             <Title text='Selecione o(s) assento(s)'/>
             <Seats />
-            <Footer />
           </>
          } />
 
         <Route path='/sucesso' element={ <CheckOut />} />
 
       </Routes>
-      
+
     </Router>
     );
 }
